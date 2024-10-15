@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Details{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <h3 align="center">Details:</h3>
+    <div class="input-group mb-3">
+        <label for="dept" class="input-group-text">Department</label>
+        <select class="form-select" name="dept" id="dept">
+            <option selected value="select">Select</option>
+          <option value="cse">CSE</option>
+          <option value="ece">ECE</option>
+          <option value="csbs">CSBS</option>
+          <option value="it">IT</option>
+          <option value="aiml">AIML</option>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <label for="year" class="input-group-text">Year</label>
+        <select class="form-select" name="year" id="year">
+            <option selected value="select">Select</option>
+          <option value="I">First year</option>
+          <option value="II">Second year</option>
+          <option value="III">Third year</option>
+          <option value="IV">Fourth year</option>
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <label for="class" class="input-group-text">Class</label>
+        <select class="form-select" name="class" id="class">
+            <option selected value="select">Select</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">View</button>
+  </form>
+{% endblock %}

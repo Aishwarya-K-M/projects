@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% block title %}Details{% endblock %}
+
+{% block content %}
+<h4 align="center">Details:</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Reg.no</th>
+          <th scope="col">Department</th>
+          <th scope="col">Date</th>
+          <th scope="col">Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+    {% for row in range(1, sheet.max_row + 1) %}
+    <tr>
+        <th scope="row">{{row}}</th>
+      {% for col in range(1, sheet.max_column + 1): %}
+      <td>{{ sheet.cell(row, col).value }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <form method="POST">
+    <h4 align="center">ADD</h4>
+    <div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" >Name:</span>
+            <input type="text" 
+            class="form-control" 
+            aria-label="Sizing example input" 
+            aria-describedby="inputGroup-sizing-default"
+            name="name" 
+            placeholder="Enter Name">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Register No:</span>
+            <input type="text" 
+            class="form-control" 
+            aria-label="Sizing example input" 
+            aria-describedby="inputGroup-sizing-default"
+            name="reg"
+            placeholder="Enter Register No">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Department:</span>
+            <input type="text" 
+            class="form-control" 
+            aria-label="Sizing example input" 
+            aria-describedby="inputGroup-sizing-default"
+            name="dept"
+            placeholder="Enter Department">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Date:</span>
+            <input type="date" 
+            class="form-control" 
+            aria-label="Sizing example input" 
+            aria-describedby="inputGroup-sizing-default"
+            name="date"
+            >
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Reason:</span>
+            <input type="text" 
+            class="form-control" 
+            aria-label="Sizing example input" 
+            aria-describedby="inputGroup-sizing-default"
+            name="reason"
+            placeholder="Enter Reason">
+          </div>
+        <br />
+            <button type="submit" class="btn btn-primary" name="save" value="save">Save</button>
+    </div>
+    </form>
+    <form method="POST">
+      <h4 align="center">DELETE</h4>
+      <div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default" >Entry no:</span>
+          <input type="text" 
+          class="form-control" 
+          aria-label="Sizing example input" 
+          aria-describedby="inputGroup-sizing-default"
+          name="row" 
+          placeholder="Enter entry to be deleted">
+        </div>
+        <br />
+            <button type="submit" class="btn btn-primary" name="delete" value="delete">Delete</button>
+      </div>
+    </form>
+{% endblock %}
