@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block title %}Diagnostics{% endblock %} {% block content %}
+    <h1 align="center">Analysis</h1>
+    Name: {{ user.first_name }}<br>
+        Age: {{ user.age }}<br>
+        Sex: {{ user.sex }}<br>
+    <table class="table table-striped table-hover">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">date</th>
+      <th scope="col">cp</th>
+      <th scope="col">trestbps</th>
+      <th scope="col">chol</th>
+      <th scope="col">fbs</th>
+      <th scope="col">restecg</th>
+      <th scope="col">thalach</th>
+      <th scope="col">exang</th>
+      <th scope="col">oldpeak</th>
+      <th scope="col">slope</th>
+      <th scope="col">ca</th>
+      <th scope="col">thal</th>
+      <th scope="col">target</th>
+      
+    </thead>
+      <tbody>
+        {% for data in user.history %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{data.date}}</td>
+            <td>{{data.cp}}</td>
+            <td>{{data.trestbps}}</td>
+            <td>{{data.chol}}</td>
+            <td>{{data.fbs}}</td>
+            <td>{{data.restecg}}</td>
+            <td>{{data.thalach}}</td>
+            <td>{{data.exang}}</td>
+            <td>{{data.oldpeak}}</td>
+            <td>{{data.slope}}</td>
+            <td>{{data.ca}}</td>
+            <td>{{data.thal}}</td>
+            <td>{{data.target}}</td>  
+        </tr>
+        {% endfor %}
+      </tbody>
+      
+      </table>
+      <iframe src="https://drive.google.com/file/d/1hPEBv842nLg_afEASnilwst7NlkBNCIn/preview" width="640" height="480" allow="autoplay"></iframe>
+    {% endblock %}

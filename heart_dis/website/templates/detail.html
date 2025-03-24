@@ -1,0 +1,122 @@
+{% extends "base.html" %} 
+{% block title %}Details{% endblock %} {% block content
+    %}
+    <form method="POST">
+        <h3 align="center">Enter Information:</h3>
+        <div class="form-group">
+          
+        <div>
+          <label for="cp">Chest Pain Type(0-3)</label>
+          <input
+          type="number"
+          class="form-control"
+          id="cp"
+          name="cp"
+          min="0"
+          max="3"
+          >
+        </div>
+        <div>
+          <label for="trestbps">Resting Blood Pressure</label>
+          <input
+          type="text"
+          class="form-control"
+          id="trestbps"
+          name="trestbps"
+          >
+        </div>
+        <div>
+          <label for="chol">Cholesterol</label>
+          <input
+          type="text"
+          class="form-control"
+          id="chol"
+          name="chol"
+          >
+        </div>
+        <div>
+          <label for="fbs">Fasting Blood Sugar(1: 80-100mg/dL or 0)</label>
+          <input
+          type="number"
+          class="form-control"
+          id="fbs"
+          name="fbs"
+          min="0"
+          max="1"
+          >
+        </div>
+        <div>
+          <label for="restecg">Resting Electrocardiographic Results(0-2)</label>
+          <input
+          type="number"
+          class="form-control"
+          id="restecg"
+          name="restecg"
+          min="0"
+          max="2"
+          >
+        </div>
+        <div>
+          <label for="thalach">Maximum Heart Rate Achieved</label>
+          <input
+          type="text"
+          class="form-control"
+          id="thalach"
+          name="thalach"
+          >
+        </div>
+        <div>
+          <label for="exang">Exercise-Induced Angina(1 = Yes, 0 = No):</label>
+          <input
+          type="number"
+          max="1"
+          min = '0'
+          class="form-control"
+          id="exang"
+          name="exang"
+          >
+        </div>
+        <div>
+          <label for="oldpeak">Oldpeak</label>
+          <input
+          type="text"
+          class="form-control"
+          id="oldpeak"
+          name="oldpeak"
+          >
+        </div>
+        <div>
+          <label for="slope">Slope(0-2)</label>
+          <input
+          type="number"
+          min="0"
+          max="2"
+          class="form-control"
+          id="slope"
+          name="slope"
+          >
+        </div>
+        <div>
+          <label for="ca">Number of Major Vessels Colored by Fluoroscopy(0-2)</label>
+          <input
+          type="number"
+          min="0"
+          max="2"
+          class="form-control"
+          id="ca"
+          name="ca"
+          >
+        </div>
+        <div>
+          <label for="thal">Thalassemia</label>
+          <input
+          type="text"
+          class="form-control"
+          id="thal"
+          name="thal"
+          >
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Result</button>
+      </form>
+      {% endblock %}

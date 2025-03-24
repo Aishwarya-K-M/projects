@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Result{% endblock %} 
+{% block content%}
+    <h1 style="margin-bottom: 10px;">Result</h1>
+    <p>
+        <div style="font-size: 20px;">Name: {{ user.first_name }}<br>
+        Age: {{ user.age }}<br>
+        Sex: {{ user.sex }}<br></div>
+        <div style="font-size: 35px;">Result: {% if result %}
+        You have a chance of getting stroke. Please focus on your health.<br>
+        <img class="img-fluid" style="height: 500px;width: 35vw;" src="https://www.heart.org/-/media/Images/News/2019/March-2019/0317GraphicPreventionGuidelinesFINAL.png"><br>
+        <img class="img-fluid" style="height: 500px;width: 35vw;" src="https://drkathiresan.com/wp-content/uploads/2023/09/Best-Foods-for-A-Healthy-Heart.webp">
+
+        
+        {% else %}
+        You have less chance of getting stroke. Hurray! maintain your health... </div>
+            <br>
+        <img class="img-fluid" style="height: 500px;width: 35vw;" src="https://images.squarespace-cdn.com/content/v1/5f186fab216e237456dbea73/6164808e-7004-4b93-8ec1-ce547ac95cdd/THUMBS+UP+TO+A+HEALTHY+HEART.jpg?format=1500w">
+        
+        {% endif %}
+
+    </p>
+    {% endblock %}
